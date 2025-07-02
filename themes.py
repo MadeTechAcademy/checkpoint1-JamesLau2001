@@ -14,8 +14,33 @@ duties = [
     "Duty 13 Accept ownership of changes; embody the DevOps culture of 'you build it, you run it', with a relentless focus on the user experience.",
 ]#list of duties
 def display_duties():
-    for duty in duties:
-        print("{0}\n".format(duty))
+    with open("themes.html", "w") as f:
+
+        html_contents = """
+        <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link rel="stylesheet" href="themes_styles.css">
+                <title>Display Duties</title>
+            </head>
+            <body>
+                <h1> List of All Duties: </h1>
+                <ol>
+        """
+
+        for duty in duties:
+            html_contents += f"""
+                    <li>{duty}</li>\n"""
+        
+        html_contents += """
+                </ol>
+            </body>
+            </html>
+        """
+
+        f.write(html_contents)
 
 if __name__=="__main__":
     user_choice = input("""
