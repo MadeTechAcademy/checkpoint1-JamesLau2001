@@ -13,15 +13,15 @@ duties = [
     "Duty 12 Look to automate any manual tasks that are repeated, often using APIs.",
     "Duty 13 Accept ownership of changes; embody the DevOps culture of 'you build it, you run it', with a relentless focus on the user experience.",
 ]#list of duties
-def go():
-    for y in duties:
-        print("{0}\n".format(y))
+def display_duties():
+    for duty in duties:
+        print("{0}\n".format(duty))
 
 if __name__=="__main__":
-    x = input("""
+    user_choice = input("""
     Welcome to apprentice themes!\n
     Press (1) to list all the duties\n
     Enter your choice:
     """)
-    if x == '1':
-        go()
+    if user_choice == '1':
+        display_duties()
