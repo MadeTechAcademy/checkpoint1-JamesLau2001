@@ -41,7 +41,7 @@ def test_correct_duties_for_automate_theme():
 def test_correct_duties_for_houston_prepare_to_launch_theme():
     with open("html_themes/houston_duties.html", "r") as houston_duties:
         content = houston_duties.read()
-        assert "<h1> List of Automate! Duties: </h1>" in content
+        assert "<h1> List of Houston, Prepare to Launch Duties: </h1>" in content
         assert "<li>Duty 6 Implement and improve release automation & orchestration, often using Application Programming Interfaces (API), as part of a continuous delivery and continuous deployment pipeline, ensuring that team(s) are able to deploy new code rapidly and safely.</li>" in content
         assert "<li>Duty 7 Provision cloud infrastructure using APIs, continually improve infrastructure-as-code, considering use of industry leading technologies as they become available (e.g. Serverless, Containers).</li>" in content
         assert "<li>Duty 10 Implement a good coverage of monitoring (metrics, logs), ensuring that alerts are visible, tuneable and actionable.</li>" in content

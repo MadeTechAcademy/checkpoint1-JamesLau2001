@@ -58,14 +58,28 @@ def display_duties(user_choice):
             """
             f.write(html_contents)
 
-    
+    elif user_choice == "4":
+        houston_indexes = [5,6,9,11]
+        with open("html_themes/houston_duties.html", "w") as f:
+            html_contents = """
+                    <h1> List of Houston, Prepare to Launch Duties: </h1>
+                    <ol>
+            """
+            for index in houston_indexes:
+                html_contents += f"""
+                        <li>{duties[index]}</li>\n"""
+            html_contents += """
+                    </ol>
+            """
+            f.write(html_contents)
 
 if __name__=="__main__":
     user_choice = input("""
     Welcome to apprentice themes!\n
     Press (1) to list all the duties\n
-    Press (2) to list the bootcamp duties\n
-    Press (3) to list the automate! duties\n
+    Press (2) to list the Bootcamp duties\n
+    Press (3) to list the Automate! duties\n
+    Press (4) to list the Houston, Prepare to Launch duties\n
     Enter your choice:
     """)
     display_duties(user_choice)
