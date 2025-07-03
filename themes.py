@@ -16,91 +16,48 @@ duties = [
 def display_duties(user_choice):
     if user_choice == "1":
         with open("html_themes/themes.html", "w") as f:
-
             html_contents = """
-            <!DOCTYPE html>
-                <html lang="en">
-                <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <link rel="stylesheet" href="themes_styles.css">
-                    <title>Display All Duties</title>
-                </head>
-                <body>
                     <h1> List of All Duties: </h1>
                     <ol>
             """
-
             for duty in duties:
                 html_contents += f"""
                         <li>{duty}</li>\n"""
             
             html_contents += """
                     </ol>
-                </body>
-                </html>
             """
-
             f.write(html_contents)
     
     elif user_choice == "2":
         bootcamp_indexes = [0,1,2,3,12]
         with open("html_themes/bootcamp_themes.html", "w") as f:
-
             html_contents = """
-            <!DOCTYPE html>
-                <html lang="en">
-                <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <link rel="stylesheet" href="themes_styles.css">
-                    <title>Display Bootcamp Duties</title>
-                </head>
-                <body>
                     <h1> List of Bootcamp Duties: </h1>
                     <ol>
             """
-
             for index in bootcamp_indexes:
                 html_contents += f"""
                         <li>{duties[index]}</li>\n"""
-            
             html_contents += """
                     </ol>
-                </body>
-                </html>
             """
-
             f.write(html_contents)
 
     elif user_choice == "3":
         automate_indexes = [4,6,9]
         with open("html_themes/automate_duties.html", "w") as f:
-
             html_contents = """
-            <!DOCTYPE html>
-                <html lang="en">
-                <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <link rel="stylesheet" href="themes_styles.css">
-                    <title>Display Automate! Duties</title>
-                </head>
-                <body>
                     <h1> List of Automate! Duties: </h1>
                     <ol>
             """
-
             for index in automate_indexes:
                 html_contents += f"""
                         <li>{duties[index]}</li>\n"""
             
             html_contents += """
                     </ol>
-                </body>
-                </html>
             """
-
             f.write(html_contents)
 
 if __name__=="__main__":

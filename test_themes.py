@@ -5,8 +5,6 @@ def test_amount_of_duties_is_correct():
 def test_all_duties_in_html():
     with open("html_themes/themes.html", "r") as all_themes:
         content = all_themes.read()
-
-        assert "<title>Display All Duties</title>" in content
         assert "<h1> List of All Duties: </h1>" in content
         assert "<li>Duty 1 Script and code in at least one general purpose language and at least one domain-specific language to orchestrate infrastructure, follow test driven development and ensure appropriate test coverage.</li>" in content
         assert "<li>Duty 2 Initiate and facilitate knowledge sharing and technical collaboration with teams and individuals, with a focus on supporting development of team members.</li>" in content
@@ -25,8 +23,6 @@ def test_all_duties_in_html():
 def test_correct_duties_for_bootcamp_theme():
     with open("html_themes/bootcamp_themes.html", "r") as bootcamp_themes:
         content = bootcamp_themes.read()
-
-        assert "<title>Display Bootcamp Duties</title>" in content
         assert "<h1> List of Bootcamp Duties: </h1>" in content
         assert "<li>Duty 1 Script and code in at least one general purpose language and at least one domain-specific language to orchestrate infrastructure, follow test driven development and ensure appropriate test coverage.</li>" in content
         assert "<li>Duty 2 Initiate and facilitate knowledge sharing and technical collaboration with teams and individuals, with a focus on supporting development of team members.</li>" in content
@@ -37,8 +33,6 @@ def test_correct_duties_for_bootcamp_theme():
 def test_correct_duties_for_automate_theme():
     with open("html_themes/automate_duties.html", "r") as automate_duties:
         content = automate_duties.read()
-
-        assert "<title>Display Automate! Duties</title>" in content
         assert "<h1> List of Automate! Duties: </h1>" in content
         assert "<li>Duty 5 Build and operate a Continuous Integration (CI) capability, employing version control of source code and related artefacts</li>" in content
         assert "<li>Duty 7 Provision cloud infrastructure using APIs, continually improve infrastructure-as-code, considering use of industry leading technologies as they become available (e.g. Serverless, Containers).</li>" in content
