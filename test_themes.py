@@ -46,3 +46,9 @@ def test_correct_duties_for_houston_prepare_to_launch_theme():
         assert "<li>Duty 7 Provision cloud infrastructure using APIs, continually improve infrastructure-as-code, considering use of industry leading technologies as they become available (e.g. Serverless, Containers).</li>" in content
         assert "<li>Duty 10 Implement a good coverage of monitoring (metrics, logs), ensuring that alerts are visible, tuneable and actionable.</li>" in content
         assert "<li>Duty 12 Look to automate any manual tasks that are repeated, often using APIs.</li>" in content
+
+def test_correct_duties_for_going_deeper_theme():
+    with open("html_themes/going_deeper_duties.html", "r") as going_deeper_duties:
+        content = going_deeper_duties.read()
+        assert "<h1> List of Going Deeper Duties: </h1>" in content
+        assert "<li>Duty 11 Keep up with cutting edge by committing to continual training and development - utilise web resources for self-learning; horizon scanning; active membership of professional bodies such as Meetup Groups; subscribe to relevant publications.</li>" in content
