@@ -23,7 +23,6 @@ def display_duties(user_choice):
             for duty in duties:
                 html_contents += f"""
                         <li>{duty}</li>\n"""
-            
             html_contents += """
                     </ol>
             """
@@ -54,11 +53,12 @@ def display_duties(user_choice):
             for index in automate_indexes:
                 html_contents += f"""
                         <li>{duties[index]}</li>\n"""
-            
             html_contents += """
                     </ol>
             """
             f.write(html_contents)
+
+    
 
 if __name__=="__main__":
     user_choice = input("""
