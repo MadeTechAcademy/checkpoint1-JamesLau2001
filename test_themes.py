@@ -52,3 +52,9 @@ def test_correct_duties_for_going_deeper_theme():
         content = going_deeper_duties.read()
         assert "<h1> List of Going Deeper Duties: </h1>" in content
         assert "<li>Duty 11 Keep up with cutting edge by committing to continual training and development - utilise web resources for self-learning; horizon scanning; active membership of professional bodies such as Meetup Groups; subscribe to relevant publications.</li>" in content
+
+def test_correct_duties_for_assemble_theme():
+    with open("html_themes/assemble_duties.html", "r") as assemble_duties:
+        content = assemble_duties.read()
+        assert "<h1> List of Assemble! Duties: </h1>" in content
+        assert "<li>Duty 8 Evolve and define architecture, utilising the knowledge and experience of the team to design in an optimal user experience, scalability, security, high availability and optimal performance.</li>" in content
