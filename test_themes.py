@@ -58,3 +58,9 @@ def test_correct_duties_for_assemble_theme():
         content = assemble_duties.read()
         assert "<h1> List of Assemble! Duties: </h1>" in content
         assert "<li>Duty 8 Evolve and define architecture, utilising the knowledge and experience of the team to design in an optimal user experience, scalability, security, high availability and optimal performance.</li>" in content
+
+def test_correct_duties_for_call_security_theme():
+    with open("html_themes/call_security_duties.html", "r") as call_security_duties:
+        content = call_security_duties.read()
+        assert "<h1> List of Call Security Duties: </h1>" in content
+        assert "<li>Duty 9 Apply leading security practices throughout the Software Development Lifecycle (SDLC).</li>" in content
