@@ -87,6 +87,20 @@ def display_duties(user_choice):
             """
             f.write(html_contents)
 
+    elif user_choice == "6":
+        assemble_index = 7
+        with open("html_themes/assemble_duties.html", "w") as f:
+            html_contents = """
+                    <h1> List of Assemble! Duties: </h1>
+                    <ol>
+            """
+            html_contents += f"""
+                        <li>{duties[assemble_index]}</li>\n"""
+            html_contents += """
+                    </ol>
+            """
+            f.write(html_contents)
+
 if __name__=="__main__":
     user_choice = input("""
     Welcome to apprentice themes!\n
@@ -95,6 +109,7 @@ if __name__=="__main__":
     Press (3) to list the Automate! duties\n
     Press (4) to list the Houston, Prepare to Launch duties\n
     Press (5) to list the Going Deeper duties\n
+    Press (6) to list the Assemble! duties\n
     Enter your choice:
     """)
     display_duties(user_choice)
