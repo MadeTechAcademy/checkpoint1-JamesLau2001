@@ -24,7 +24,7 @@ def display_duties(user_choice):
                     <meta charset="UTF-8">
                     <meta name="viewport" content="width=device-width, initial-scale=1.0">
                     <link rel="stylesheet" href="themes_styles.css">
-                    <title>Display Duties</title>
+                    <title>Display All Duties</title>
                 </head>
                 <body>
                     <h1> List of All Duties: </h1>
@@ -54,7 +54,7 @@ def display_duties(user_choice):
                     <meta charset="UTF-8">
                     <meta name="viewport" content="width=device-width, initial-scale=1.0">
                     <link rel="stylesheet" href="themes_styles.css">
-                    <title>Display Duties</title>
+                    <title>Display Bootcamp Duties</title>
                 </head>
                 <body>
                     <h1> List of Bootcamp Duties: </h1>
