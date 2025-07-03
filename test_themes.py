@@ -21,7 +21,7 @@ def test_all_duties_in_html():
         assert "<li>Duty 13 Accept ownership of changes; embody the DevOps culture of 'you build it, you run it', with a relentless focus on the user experience.</li>" in content
 
 def test_correct_duties_for_bootcamp_theme():
-    with open("html_themes/bootcamp_themes.html", "r") as bootcamp_themes:
+    with open("html_themes/bootcamp_duties.html", "r") as bootcamp_themes:
         content = bootcamp_themes.read()
         assert "<h1> List of Bootcamp Duties: </h1>" in content
         assert "<li>Duty 1 Script and code in at least one general purpose language and at least one domain-specific language to orchestrate infrastructure, follow test driven development and ensure appropriate test coverage.</li>" in content
@@ -64,3 +64,4 @@ def test_correct_duties_for_call_security_theme():
         content = call_security_duties.read()
         assert "<h1> List of Call Security Duties: </h1>" in content
         assert "<li>Duty 9 Apply leading security practices throughout the Software Development Lifecycle (SDLC).</li>" in content
+ 

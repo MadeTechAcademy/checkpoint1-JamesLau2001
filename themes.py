@@ -1,3 +1,5 @@
+from utility_functions.write_html import write_html
+
 duties = [
     "Duty 1 Script and code in at least one general purpose language and at least one domain-specific language to orchestrate infrastructure, follow test driven development and ensure appropriate test coverage.",
     "Duty 2 Initiate and facilitate knowledge sharing and technical collaboration with teams and individuals, with a focus on supporting development of team members.",
@@ -30,90 +32,28 @@ def display_duties(user_choice):
     
     elif user_choice == "2":
         bootcamp_indexes = [0,1,2,3,12]
-        with open("html_themes/bootcamp_themes.html", "w") as f:
-            html_contents = """
-                    <h1> List of Bootcamp Duties: </h1>
-                    <ol>
-            """
-            for index in bootcamp_indexes:
-                html_contents += f"""
-                        <li>{duties[index]}</li>\n"""
-            html_contents += """
-                    </ol>
-            """
-            f.write(html_contents)
+        write_html("bootcamp", bootcamp_indexes, duties, user_choice)
 
     elif user_choice == "3":
         automate_indexes = [4,6,9]
-        with open("html_themes/automate_duties.html", "w") as f:
-            html_contents = """
-                    <h1> List of Automate! Duties: </h1>
-                    <ol>
-            """
-            for index in automate_indexes:
-                html_contents += f"""
-                        <li>{duties[index]}</li>\n"""
-            html_contents += """
-                    </ol>
-            """
-            f.write(html_contents)
+        write_html("automate", automate_indexes, duties, user_choice)
 
     elif user_choice == "4":
         houston_indexes = [5,6,9,11]
-        with open("html_themes/houston_duties.html", "w") as f:
-            html_contents = """
-                    <h1> List of Houston, Prepare to Launch Duties: </h1>
-                    <ol>
-            """
-            for index in houston_indexes:
-                html_contents += f"""
-                        <li>{duties[index]}</li>\n"""
-            html_contents += """
-                    </ol>
-            """
-            f.write(html_contents)
+        write_html("houston", houston_indexes, duties, user_choice)
 
     elif user_choice == "5":
-        going_deeper_index = 10
-        with open("html_themes/going_deeper_duties.html", "w") as f:
-            html_contents = """
-                    <h1> List of Going Deeper Duties: </h1>
-                    <ol>
-            """
-            html_contents += f"""
-                        <li>{duties[going_deeper_index]}</li>\n"""
-            html_contents += """
-                    </ol>
-            """
-            f.write(html_contents)
+        going_deeper_indexes = [10]
+        write_html("going_deeper", going_deeper_indexes, duties, user_choice)
 
     elif user_choice == "6":
-        assemble_index = 7
-        with open("html_themes/assemble_duties.html", "w") as f:
-            html_contents = """
-                    <h1> List of Assemble! Duties: </h1>
-                    <ol>
-            """
-            html_contents += f"""
-                        <li>{duties[assemble_index]}</li>\n"""
-            html_contents += """
-                    </ol>
-            """
-            f.write(html_contents)
+        assemble_indexes = [7]
+        write_html("assemble", assemble_indexes, duties, user_choice)
 
     elif user_choice == "7":
-        call_security_index = 8
-        with open("html_themes/call_security_duties.html", "w") as f:
-            html_contents = """
-                    <h1> List of Call Security Duties: </h1>
-                    <ol>
-            """
-            html_contents += f"""
-                        <li>{duties[call_security_index]}</li>\n"""
-            html_contents += """
-                    </ol>
-            """
-            f.write(html_contents)
+        call_security_indexes = [8]
+        write_html("call_security", call_security_indexes, duties, user_choice)
+        
 
 if __name__=="__main__":
     user_choice = input("""
