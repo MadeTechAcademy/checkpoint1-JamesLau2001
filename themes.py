@@ -73,6 +73,20 @@ def display_duties(user_choice):
             """
             f.write(html_contents)
 
+    elif user_choice == "5":
+        going_deeper_index = 10
+        with open("html_themes/going_deeper_duties.html", "w") as f:
+            html_contents = """
+                    <h1> List of Going Deeper Duties: </h1>
+                    <ol>
+            """
+            html_contents += f"""
+                        <li>{duties[going_deeper_index]}</li>\n"""
+            html_contents += """
+                    </ol>
+            """
+            f.write(html_contents)
+
 if __name__=="__main__":
     user_choice = input("""
     Welcome to apprentice themes!\n
@@ -80,6 +94,7 @@ if __name__=="__main__":
     Press (2) to list the Bootcamp duties\n
     Press (3) to list the Automate! duties\n
     Press (4) to list the Houston, Prepare to Launch duties\n
+    Press (5) to list the Going Deeper duties\n
     Enter your choice:
     """)
     display_duties(user_choice)
