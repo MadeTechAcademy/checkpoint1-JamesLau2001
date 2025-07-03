@@ -1,8 +1,9 @@
-from themes import duties
+from themes import duties, display_duties
 def test_amount_of_duties_is_correct():
     assert len(duties) == 13
 
 def test_all_duties_in_html():
+    display_duties("1")
     with open("html_themes/themes.html", "r") as all_themes:
         content = all_themes.read()
         assert "<h1> List of All Duties: </h1>" in content
@@ -21,6 +22,7 @@ def test_all_duties_in_html():
         assert "<li>Duty 13 Accept ownership of changes; embody the DevOps culture of 'you build it, you run it', with a relentless focus on the user experience.</li>" in content
 
 def test_correct_duties_for_bootcamp_theme():
+    display_duties("2")
     with open("html_themes/bootcamp_duties.html", "r") as bootcamp_themes:
         content = bootcamp_themes.read()
         assert "<h1> List of Bootcamp Duties: </h1>" in content
@@ -31,6 +33,7 @@ def test_correct_duties_for_bootcamp_theme():
         assert "<li>Duty 13 Accept ownership of changes; embody the DevOps culture of 'you build it, you run it', with a relentless focus on the user experience.</li>" in content
 
 def test_correct_duties_for_automate_theme():
+    display_duties("3")
     with open("html_themes/automate_duties.html", "r") as automate_duties:
         content = automate_duties.read()
         assert "<h1> List of Automate! Duties: </h1>" in content
@@ -39,6 +42,7 @@ def test_correct_duties_for_automate_theme():
         assert "<li>Duty 10 Implement a good coverage of monitoring (metrics, logs), ensuring that alerts are visible, tuneable and actionable.</li>" in content
 
 def test_correct_duties_for_houston_prepare_to_launch_theme():
+    display_duties("4")
     with open("html_themes/houston_duties.html", "r") as houston_duties:
         content = houston_duties.read()
         assert "<h1> List of Houston, Prepare to Launch Duties: </h1>" in content
@@ -48,18 +52,21 @@ def test_correct_duties_for_houston_prepare_to_launch_theme():
         assert "<li>Duty 12 Look to automate any manual tasks that are repeated, often using APIs.</li>" in content
 
 def test_correct_duties_for_going_deeper_theme():
+    display_duties("5")
     with open("html_themes/going_deeper_duties.html", "r") as going_deeper_duties:
         content = going_deeper_duties.read()
         assert "<h1> List of Going Deeper Duties: </h1>" in content
         assert "<li>Duty 11 Keep up with cutting edge by committing to continual training and development - utilise web resources for self-learning; horizon scanning; active membership of professional bodies such as Meetup Groups; subscribe to relevant publications.</li>" in content
 
 def test_correct_duties_for_assemble_theme():
+    display_duties("6")
     with open("html_themes/assemble_duties.html", "r") as assemble_duties:
         content = assemble_duties.read()
         assert "<h1> List of Assemble! Duties: </h1>" in content
         assert "<li>Duty 8 Evolve and define architecture, utilising the knowledge and experience of the team to design in an optimal user experience, scalability, security, high availability and optimal performance.</li>" in content
 
 def test_correct_duties_for_call_security_theme():
+    display_duties("7")
     with open("html_themes/call_security_duties.html", "r") as call_security_duties:
         content = call_security_duties.read()
         assert "<h1> List of Call Security Duties: </h1>" in content
