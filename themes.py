@@ -73,11 +73,42 @@ def display_duties(user_choice):
 
             f.write(html_contents)
 
+    elif user_choice == "3":
+        automate_indexes = [4,6,9]
+        with open("html_themes/automate_duties.html", "w") as f:
+
+            html_contents = """
+            <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <link rel="stylesheet" href="themes_styles.css">
+                    <title>Display Automate! Duties</title>
+                </head>
+                <body>
+                    <h1> List of Automate! Duties: </h1>
+                    <ol>
+            """
+
+            for index in automate_indexes:
+                html_contents += f"""
+                        <li>{duties[index]}</li>\n"""
+            
+            html_contents += """
+                    </ol>
+                </body>
+                </html>
+            """
+
+            f.write(html_contents)
+
 if __name__=="__main__":
     user_choice = input("""
     Welcome to apprentice themes!\n
     Press (1) to list all the duties\n
     Press (2) to list the bootcamp duties\n
+    Press (3) to list the automate! duties\n
     Enter your choice:
     """)
     display_duties(user_choice)
