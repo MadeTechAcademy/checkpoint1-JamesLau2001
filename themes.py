@@ -14,7 +14,7 @@ duties = [
     "Duty 11 Keep up with cutting edge by committing to continual training and development - utilise web resources for self-learning; horizon scanning; active membership of professional bodies such as Meetup Groups; subscribe to relevant publications.",
     "Duty 12 Look to automate any manual tasks that are repeated, often using APIs.",
     "Duty 13 Accept ownership of changes; embody the DevOps culture of 'you build it, you run it', with a relentless focus on the user experience.",
-]#list of duties
+]
 def display_duties(user_choice):
     if user_choice == "1":
         with open("html_themes/themes.html", "w") as f:
