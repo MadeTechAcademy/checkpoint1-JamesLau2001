@@ -22,4 +22,14 @@ def test_all_duties_in_html():
         assert "<li>Duty 12 Look to automate any manual tasks that are repeated, often using APIs.</li>" in content
         assert "<li>Duty 13 Accept ownership of changes; embody the DevOps culture of 'you build it, you run it', with a relentless focus on the user experience.</li>" in content
 
-    
+def test_correct_duties_for_bootcamp_theme():
+    with open("html_themes/bootcamp_themes.html", "r") as bootcamp_themes:
+        content = bootcamp_themes.read()
+
+        assert "<title>Display Duties</title>" in content
+        assert "<h1> List of Bootcamp Duties: </h1>" in content
+        assert "<li>Duty 1 Script and code in at least one general purpose language and at least one domain-specific language to orchestrate infrastructure, follow test driven development and ensure appropriate test coverage.</li>" in content
+        assert "<li>Duty 2 Initiate and facilitate knowledge sharing and technical collaboration with teams and individuals, with a focus on supporting development of team members.</li>" in content
+        assert "<li>Duty 3 Engage in productive pair/mob programming to underpin the practice of peer review.</li>" in content
+        assert "<li>Duty 4 Work as part of an agile team, and explore new ways of working, rapidly responding to changing user needs and with a relentless focus on the user experience. Understand the importance of continual improvement within a blameless culture.</li>" in content
+        assert "<li>Duty 13 Accept ownership of changes; embody the DevOps culture of 'you build it, you run it', with a relentless focus on the user experience.</li>" in content
