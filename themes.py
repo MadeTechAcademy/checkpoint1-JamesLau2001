@@ -101,6 +101,20 @@ def display_duties(user_choice):
             """
             f.write(html_contents)
 
+    elif user_choice == "7":
+        call_security_index = 8
+        with open("html_themes/call_security_duties.html", "w") as f:
+            html_contents = """
+                    <h1> List of Call Security Duties: </h1>
+                    <ol>
+            """
+            html_contents += f"""
+                        <li>{duties[call_security_index]}</li>\n"""
+            html_contents += """
+                    </ol>
+            """
+            f.write(html_contents)
+
 if __name__=="__main__":
     user_choice = input("""
     Welcome to apprentice themes!\n
@@ -110,6 +124,7 @@ if __name__=="__main__":
     Press (4) to list the Houston, Prepare to Launch duties\n
     Press (5) to list the Going Deeper duties\n
     Press (6) to list the Assemble! duties\n
+    Press (7) to list the Call Security duties\n
     Enter your choice:
     """)
     display_duties(user_choice)
