@@ -6,7 +6,7 @@ def test_amount_of_duties_is_correct():
 
 def test_all_duties_in_html():
     display_duties("1")
-    with open("html_themes/themes.html", "r") as all_themes:
+    with open("html_themes/all_duties.html", "r") as all_themes:
         content = all_themes.read()
         assert "<h1> List of All Duties: </h1>" in content
         assert "<li>Duty 1 Script and code in at least one general purpose language and at least one domain-specific language to orchestrate infrastructure, follow test driven development and ensure appropriate test coverage.</li>" in content

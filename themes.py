@@ -17,7 +17,7 @@ duties = [
 ]
 def display_duties(user_choice):
     if user_choice == "1":
-        with open("html_themes/themes.html", "w") as f:
+        with open("html_themes/all_duties.html", "w") as f:
             html_contents = """
                     <h1> List of All Duties: </h1>
                     <ol>
