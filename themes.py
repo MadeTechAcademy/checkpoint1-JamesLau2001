@@ -1,5 +1,5 @@
 from utility_functions.write_html import write_html
-
+import html2text
 duties = [
     "Duty 1 Script and code in at least one general purpose language and at least one domain-specific language to orchestrate infrastructure, follow test driven development and ensure appropriate test coverage.",
     "Duty 2 Initiate and facilitate knowledge sharing and technical collaboration with teams and individuals, with a focus on supporting development of team members.",
@@ -29,6 +29,8 @@ def display_duties(user_choice):
                     </ol>
             """
             f.write(html_contents)
+            text_content = html2text.html2text(html_contents)
+            print(text_content)
     
     elif user_choice == "2":
         bootcamp_indexes = [0,1,2,3,12]

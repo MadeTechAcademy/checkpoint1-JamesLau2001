@@ -86,3 +86,9 @@ def test_write_html_utility_function_works():
         assert "<li>Duty 3 Engage in productive pair/mob programming to underpin the practice of peer review.</li>" in content
         assert "<li>Duty 4 Work as part of an agile team, and explore new ways of working, rapidly responding to changing user needs and with a relentless focus on the user experience. Understand the importance of continual improvement within a blameless culture.</li>" in content
         assert "<li>Duty 13 Accept ownership of changes; embody the DevOps culture of 'you build it, you run it', with a relentless focus on the user experience.</li>" in content
+
+def test_html_output_in_terminal_works(capsys):
+    display_duties("6")
+    captured = capsys.readouterr()
+    assert "List of Assemble! Duties:" in captured.out
+    assert "1. Duty 8 Evolve and define architecture, utilising the knowledge and experience of the team to design in an optimal user experience, scalability, security, high availability and optimal performance." in captured.out
