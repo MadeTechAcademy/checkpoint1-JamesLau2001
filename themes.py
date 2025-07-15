@@ -17,20 +17,8 @@ duties = [
 ]
 def display_duties(user_choice):
     if user_choice == "1":
-        with open("html_themes/all_duties.html", "w") as f:
-            html_contents = """
-                    <h1> List of All Duties: </h1>
-                    <ol>
-            """
-            for duty in duties:
-                html_contents += f"""
-                        <li>{duty}</li>\n"""
-            html_contents += """
-                    </ol>
-            """
-            f.write(html_contents)
-            text_content = html2text.html2text(html_contents)
-            print(text_content)
+        all_indexes=[0,1,2,3,4,5,6,7,8,9,10,11,12]
+        write_html("all", all_indexes, duties, user_choice)
     
     elif user_choice == "2":
         bootcamp_indexes = [0,1,2,3,12]
