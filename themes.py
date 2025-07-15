@@ -1,5 +1,6 @@
-from utility_functions.write_html import write_html
+from jinja2 import Environment, FileSystemLoader, select_autoescape
 import html2text
+
 duties = [
     "Duty 1 Script and code in at least one general purpose language and at least one domain-specific language to orchestrate infrastructure, follow test driven development and ensure appropriate test coverage.",
     "Duty 2 Initiate and facilitate knowledge sharing and technical collaboration with teams and individuals, with a focus on supporting development of team members.",
@@ -15,35 +16,31 @@ duties = [
     "Duty 12 Look to automate any manual tasks that are repeated, often using APIs.",
     "Duty 13 Accept ownership of changes; embody the DevOps culture of 'you build it, you run it', with a relentless focus on the user experience.",
 ]
+
+html_file_index =["All","Bootcamp", "Automate!", "Houston, Prepare to Launch", "Going Deeper", "Assemble!", "Call Security"]
+
+theme_indexes = {
+    "All":[0,1,2,3,4,5,6,7,8,9,10,11,12],
+    "Bootcamp":[0,1,2,3,12],
+    "Automate!":[4,6,9],
+    "Houston, Prepare to Launch":[5,6,9,11],
+    "Going Deeper":[10],
+    "Assemble!":[7],
+    "Call Security":[8]
+}
+
 def display_duties(user_choice):
-    if user_choice == "1":
-        all_indexes=[0,1,2,3,4,5,6,7,8,9,10,11,12]
-        write_html("all", all_indexes, duties, user_choice)
-    
-    elif user_choice == "2":
-        bootcamp_indexes = [0,1,2,3,12]
-        write_html("bootcamp", bootcamp_indexes, duties, user_choice)
+    env = Environment(
+        loader = FileSystemLoader("html_themes"),
+        autoescape = select_autoescape()
+    )
 
-    elif user_choice == "3":
-        automate_indexes = [4,6,9]
-        write_html("automate", automate_indexes, duties, user_choice)
+    chosen_theme = html_file_index[int(user_choice)-1]
+    chosen_index = theme_indexes[chosen_theme]
 
-    elif user_choice == "4":
-        houston_indexes = [5,6,9,11]
-        write_html("houston", houston_indexes, duties, user_choice)
-
-    elif user_choice == "5":
-        going_deeper_indexes = [10]
-        write_html("going_deeper", going_deeper_indexes, duties, user_choice)
-
-    elif user_choice == "6":
-        assemble_indexes = [7]
-        write_html("assemble", assemble_indexes, duties, user_choice)
-
-    elif user_choice == "7":
-        call_security_indexes = [8]
-        write_html("call_security", call_security_indexes, duties, user_choice)
-        
+    template = env.get_template("template.html")
+    rendered_template = template.render(chosen_theme=chosen_theme, chosen_index=chosen_index, duties=duties)
+    print(html2text.html2text(rendered_template))
 
 if __name__=="__main__":
     user_choice = input("""

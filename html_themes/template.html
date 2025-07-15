@@ -1,0 +1,6 @@
+<h1> List of {{ chosen_theme }} Duties: </h1>
+    <ol>
+        {% for index in chosen_index %}
+        <li>{{ duties[index] }}</li>
+        {% endfor %}
+    </ol>
